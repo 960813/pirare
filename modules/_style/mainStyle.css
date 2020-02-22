@@ -1,0 +1,648 @@
+@import url("normalize.css");
+@import url("header.css");
+@import url("footer.css");
+
+
+html, body {
+    margin: 0;
+    font-size: 100%;
+    background-color: white;
+}
+
+ul, li, dl, dt, dd {
+    list-style: none
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.cl8e8e8e {
+    color: #8e8e8e;
+}
+
+.svgFill {
+    fill: currentColor;
+    stroke-width: 0;
+    vertical-align: middle;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.svgFill:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dsBlock {
+    display: block;
+}
+
+.ml36 {
+    margin-left: 36px;
+}
+
+.ml16 {
+    margin-left: 16px;
+}
+
+.mr24 {
+    margin-right: 24px;
+}
+
+.setFlex {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 0;
+}
+
+.divFlex {
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+}
+
+.divFocus {
+    cursor: pointer;
+}
+
+.divFocus:focus {
+    box-shadow: 0 0 0 4px rgba(0, 132, 255, .5);
+    outline: 0;
+}
+
+
+div.gridCentered {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid-item {
+    float: left;
+}
+
+.pinItem {
+    cursor: zoom-in;
+}
+
+div.gridCentered a {
+    text-decoration: none;
+}
+
+div.gridCentered .pinItem {
+    background: transparent;
+    /*transition: opacity .4s ease-in-out;*/
+    box-sizing: border-box;
+    padding: 3px 6px;
+}
+
+
+div.gridCentered .pinItem svg {
+    float: right;
+    margin: 3px 5px 0 0;
+    cursor: pointer;
+    padding: 5px;
+    background-color: transparent;
+
+}
+
+div.gridCentered div#pinPopup {
+    width: 200px;
+    height: 150px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    display: none;
+    cursor: default;
+}
+
+div.gridCentered div#pinPopup * {
+    cursor: pointer;
+}
+
+div.gridCentered .pinItem svg:hover {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+div.gridCentered .pinItem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+div.gridCentered:hover .test:not(:hover) {
+    opacity: 0.4;
+}
+
+#screenFilter {
+    background-color: rgba(0, 0, 0, .4);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 500;
+    display: none;
+}
+
+#addPirWrap > #screenFilter {
+    z-index: 10002;
+}
+
+.addPirButton {
+    margin: 12px 20px 12px 20px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    fill: currentColor;
+    stroke-width: 0;
+    vertical-align: middle;
+    padding: 5px;
+    border-radius: 50%;
+    animation-delay: 100ms;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 0px 0px, rgba(0, 0, 0, 0.04) 0px 0px 0px 0.5px;
+    transform: translateY(0px);
+    transition-delay: 100ms;
+    transition-duration: 0.85s;
+
+    background-color: #fff;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+}
+
+.addPirButton:hover {
+    background-color: rgb(222, 222, 222);
+}
+
+.addPirButton svg {
+    color: #333;
+}
+
+#addPirWrap > #viewPirPopup {
+    display: none;
+    z-index: 10003;
+
+    background-color: white;
+    color: black;
+
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .18);
+    outline: none;
+    position: fixed;
+
+
+    top: 50%;
+    left: 50%;
+
+    width: 350px;
+    margin-left: -175px;
+    height: 570px;
+    margin-top: -285px;
+}
+
+#viewPirPopupContent {
+    height: 100%;
+    overflow: auto;
+}
+
+#viewPirPopupContent {
+    height: 100%;
+    padding: 15px 15px 0;
+    /*overflow: scroll;*/
+}
+
+.layer-popup {
+    overflow: hidden;
+}
+
+
+#viewPirPopupContent > #viewAuthor {
+    width: 100%;
+    height: 38px;
+    position: relative;
+}
+
+#viewPirPopupContent > #viewAuthor > div {
+    float: left;
+}
+
+#viewPirPopupContent > #viewAuthor > #pirAuthor {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#viewPirPopupContent > #viewAuthor > #pirRegistered {
+    font-size: 0.8em;
+    padding: 7px 5px 0;
+}
+
+#viewPirPopupContent > #viewAuthor > svg {
+    float: right;
+    padding: 3px;
+}
+
+#viewPirPopupContent > #viewAuthor > .pirScrollMenu {
+    position: absolute;
+    z-index: 10005;
+    border-radius: 8px;
+    width: 200px;
+    top: 25px;
+    right: 5px;
+    background-color: white;
+    display: none;
+    border: 1px solid #efefef;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .18);
+    outline: none;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#viewPirPopupContent > #popupRightContent > span {
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.HeaderLine {
+    display: block;
+    border-top: 1px solid #efefef;
+    border-bottom: 0;
+    border-left: 0;
+    margin: 0;
+}
+
+#viewPirPopupContent > #viewAuthor > .pirScrollMenu > .scrollMenu_item span {
+    cursor: pointer;
+    margin-top: 0;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: -.4px;
+    padding: 12px 20px;
+    display: block;
+    font-size: 1.05em;
+    word-wrap: break-word;
+}
+
+#viewPirPopupContent #viewImg {
+    width: 100%;
+}
+
+#viewPirPopupContent #viewMsg {
+    margin: 5px 0;
+    background: #f2f2f2;
+    border: 0;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#viewPirPopupContent #viewTag {
+    margin: 5px 0 10px;
+    background: #f2f2f2;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+#viewPirPopupContent #viewBundle {
+    margin: 5px 0 10px;
+    background: #f2f2f2;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#viewPirPopupContent #viewComment {
+    margin: 5px 0;
+}
+
+#viewPirPopupContent #viewComment input[type=text] {
+    box-sizing: border-box;
+    width: 268px;
+    float: left;
+    padding: 6px;
+    border: 0;
+    background-color: #f2f2f2;
+    font-size: 14px;
+}
+
+#viewPirPopupContent #viewComment input[type=button] {
+    box-sizing: border-box;
+    float: left;
+    background: #FF1212;
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    width: 45px;
+    cursor: pointer;
+}
+
+#viewPirPopupContent #viewComment #commentList .commentItem {
+    /*background-color:lightcoral;*/
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.commentItem ul {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.commentItem ul li {
+    float: left;
+}
+
+.commentItem #commentAuthor {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.commentItem #commentRegistered {
+    margin-left: 5px;
+}
+
+.commentItem #commentOption_Modify {
+    cursor: pointer;
+    color: #8e8e8e;
+    user-select: none;
+    float: right;
+    padding-right: 5px;
+    border-right: 1px solid #8e8e8e;
+}
+
+.commentItem #commentOption_Delete {
+    cursor: pointer;
+    user-select: none;
+    color: #8e8e8e;
+    float: right;
+    padding-left: 5px;
+}
+
+.commentItem #commentEdit {
+    display: none;
+    width: 100%;
+}
+
+.commentItem #commentEditBtn {
+    display: none;
+}
+
+.commentItem #commentMsg {
+    word-break: break-all;
+    width: 100%;
+}
+
+.commentSpliter {
+    border-top: 1px solid #8e8e8e;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+.modifySubmitBtn {
+    background: #FF1212;
+
+    width: 100%;
+
+    border: 0;
+    padding: 15px;
+    margin: 5px 0 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#addPirWrap > #addPirPopup {
+    /*background-color:#fff;*/
+    background-color: #f2f2f2;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    color: black;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .18);
+    outline: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    margin-left: -175px;
+    height: 610px;
+    margin-top: -305px;
+    z-index: 10003;
+    display: none;
+}
+
+#addPirWrap > #addPirPopup > #uploadCloud {
+    border: 5px dotted black;
+    background-image: url("/vendor/cloud.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100px 100px;
+    cursor: pointer;
+}
+
+#addPirWrap > #addPirPopup > #uploadCloud,
+#addPirWrap > #addPirPopup > #imgSection {
+    width: 320px;
+    height: 320px;
+    margin: 15px;
+    position: absolute;
+}
+
+#addPirWrap > #addPirPopup #inputSection {
+    width: 320px;
+    margin: 350px 15px 0;
+}
+
+#addPirWrap > #addPirPopup input,
+#addPirWrap > #addPirPopup select {
+    box-sizing: border-box;
+    border: 1px solid black;
+    background: #fff;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#addPirWrap > #addPirPopup textarea {
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#addPirWrap > #addPirPopup button {
+    background: #FF1212;
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/*MEDIA_QUERY_START*/
+
+@media (min-width: 375px) {
+    .grid-sizer,
+    .grid-item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-sizer,
+    .grid-item {
+        width: 33.3333%;
+    }
+
+    #addPirWrap > #viewPirPopup {
+        width: 700px;
+        margin-left: -350px;
+    }
+
+    #viewPirPopupContent > #popupLeftContent {
+        width: 60%;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    #viewPirPopupContent > #popupRightContent {
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-left: 20px;
+        width: 36%;
+        float: left;
+    }
+
+    #viewPirPopupContent > #popupRightContent > span:nth-of-type(1) {
+        margin-top: 0;
+    }
+
+    #viewPirPopupContent #viewComment input[type=text] {
+        width: 184px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-sizer,
+    .grid-item {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1312px) {
+    .grid-sizer,
+    .grid-item {
+        width: 20%;
+    }
+
+    #addPirWrap > #viewPirPopup {
+        width: 1200px;
+        margin-left: -600px;
+    }
+
+    #viewPirPopupContent > #popupLeftContent {
+        width: 60%;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    #viewPirPopupContent > #popupRightContent {
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-left: 20px;
+        width: 38%;
+        float: left;
+    }
+
+    #viewPirPopupContent > #popupRightContent > span:nth-of-type(1) {
+        margin-top: 0;
+    }
+
+    #viewPirPopupContent #viewComment input[type=text] {
+        width: 387px;
+    }
+}
+
+@media (min-width: 1550px) {
+    .grid-sizer,
+    .grid-item {
+        width: 16.6666%;
+    }
+}
+
+@media (min-width: 1880px) {
+    .grid-sizer,
+    .grid-item {
+        width: 14.2857%;
+    }
+}
+
+@media (min-width: 2110px) {
+    .grid-sizer,
+    .grid-item {
+        width: 12.5%;
+    }
+}
+
+@media (min-width: 2440px) {
+    .grid-sizer,
+    .grid-item {
+        width: 11.1111%;
+    }
+}
+
+/*MEDIA_QUERY_END*/

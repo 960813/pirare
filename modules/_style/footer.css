@@ -1,0 +1,56 @@
+/* footerArea ====================*/
+.footerArea{
+    position:relative;
+    width:100%;
+    height: 165px;
+    /*z-index:2;*/
+    background:white;
+    line-height: 18px;
+    color: rgb(85, 85, 85);
+    letter-spacing: -1px;
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+}
+
+/* siteInfoArea ====================*/
+.siteInfoArea{padding:20px 0; border-top:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; }
+
+/* siteInfo --------------------*/
+.siteInfoArea .siteInfo{width:95%; margin:0 auto;}
+.siteInfoArea .siteInfo:after{content:''; display:block; clear:both;}
+.siteInfoArea .siteInfo a{font-size:13px; line-height:15px; color:#808080; font-weight:bold;}
+.siteInfoArea .siteInfo li:hover a{color:#f50b0c;}
+.siteInfoArea .siteInfo li a:focus{color:#f50b0c;}
+
+/* footerLink --------------------*/
+.siteInfoArea .siteInfo .footerLink{float:left;}
+.siteInfoArea .siteInfo .footerLink ul li{float:left; margin-left:10px;}
+.siteInfoArea .siteInfo .footerLink ul li:first-child{margin-left:0px; }
+
+/* familySite --------------------*/
+.siteInfoArea .familySite{float:right;}
+.siteInfoArea .familySite ul li{float:left; margin-left:10px;}
+
+.siteInfo ul{margin:0; padding:0;}
+
+
+
+/* footerBottom ====================*/
+.footerBottom{position:relative; width:95%; margin:0 auto;}
+.footerBottom .address{padding:20px 0; }
+.footerBottom .address p{margin:3px 0 0 0; font-size:13px;}
+.footerBottom .address a.mailto{color:#666;}
+.footerBottom .address a.mailto:hover{color:#f50b0c;}
+
+.blind{
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+/* margin left */
+.ml20{margin-left:20px !important}

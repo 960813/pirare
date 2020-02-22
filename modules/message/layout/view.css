@@ -1,0 +1,71 @@
+.form {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 25px;
+    margin: 200px auto 200px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form label {
+    text-align: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+#message-view input[type=button] {
+    background: #FF1212;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+#message-top-txt {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    float: left;
+}
+#message-top-ref {
+    float: right;
+    font-weight: bold;
+    background-color: #e8e8e8;
+    border-radius: 7px;
+    padding: 5px;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+#message-top-ref:nth-child(2)
+{
+    color: white;
+    background-color: #ED0000;
+}
+#message_target,
+#message_subject,
+#message_registered,
+#message_body{
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+#message_body{
+    resize:vertical;
+    height: 250px;
+}
+
+@media (min-width: 375px) {
+    .form {
+        width: 350px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form {
+        width: 500px;
+    }
+}

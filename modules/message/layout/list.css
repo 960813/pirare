@@ -1,0 +1,143 @@
+.form {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 25px;
+    margin: 200px auto 200px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr:nth-child(1) {
+    background-color: #f9f9f9;
+}
+
+th {
+    border: 1px solid #e4e5e7;
+}
+
+td {
+    border: 1px solid #e4e5e7;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+td > span {
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#message-top-txt {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    float: left;
+}
+
+.selectedMailBox,
+.selectedMailBox:link,
+.selectedMailBox:visited,
+.selectedMailBox:active,
+.selectedMailBox:hover {
+    color: black;
+}
+
+.unselectedMailBox,
+.unselectedMailBox:link,
+.unselectedMailBox:visited,
+.unselectedMailBox:active,
+.unselectedMailBox:hover {
+    color: #8e8e8e;
+}
+
+
+#message-top-ref {
+    float: right;
+    font-weight: bold;
+    background-color: #e8e8e8;
+    border-radius: 7px;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor:pointer;
+}
+
+#messageDeleteBtn{
+    float: left;
+    font-weight: bold;
+    background-color: #e8e8e8;
+    border-radius: 7px;
+    padding: 5px;
+    margin-top: 10px;
+    cursor:pointer;
+}
+
+@media (min-width: 375px) {
+    .form {
+        width: 350px;
+    }
+
+    th:nth-child(1),
+    td:nth-child(1),
+    td:nth-child(1) > span {
+        width: 20px;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2),
+    td:nth-child(2) > span {
+        width: 70px;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3),
+    td:nth-child(3) > span {
+        width: 109px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4),
+    td:nth-child(4) > span {
+        width: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form {
+        width: 500px;
+    }
+
+    th:nth-child(1),
+    td:nth-child(1),
+    td:nth-child(1) > span {
+        width: 20px;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2),
+    td:nth-child(2) > span {
+        width: 70px;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3),
+    td:nth-child(3) > span {
+        width: 233px;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4),
+    td:nth-child(4) > span {
+        width: 100px;
+    }
+}
