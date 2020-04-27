@@ -21,7 +21,10 @@ $pir_user_no = $queryResult['member_no'];
 $nick =$queryResult["member_nickname"];
 ?>
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if (!isset($_SESSION['pir_user_email']) || empty($_SESSION['pir_user_email'])) {
     echo '<script>
             alert("로그인이 필요한 페이지입니다.");

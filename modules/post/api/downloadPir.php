@@ -7,16 +7,16 @@ $id = $_GET['id'];
 $imgData = mysqli_fetch_array(mysqli_query($dbconn, "SELECT * FROM `pir_imgs` WHERE img_id='$id'"));
 
 
-$img_absolute_path = '/usr/share/nginx/html/pirare/upload/';
+$img_absolute_path = '/home/jupiterflow/html/pirare/upload/';
 //이미지 경로($img_path) , 이미지 이름($img_name)
 $img_path = $imgData['img_path'];
-$img_name_tmp = explode('upload/',$img_path)[1];
-$img_name = str_replace('-image','',explode('_',$img_name_tmp)[1]);
+$img_name = str_replace('-image','',substr($img_path,strpos($img_path,"_")+1,strlen($img_path) - explode($img_path,"_")[0]));
+error_log($img_name);
 /*
  *  ex)   $filename = "image1.png";
  *        $file =  $_SERVER['DOCUMENT_ROOT'] . "/images/" .$filename;
  */
-$local_img_path = $img_absolute_path.$img_name_tmp;
+$local_img_path = $img_absolute_path.$img_path;
 
 if (is_file($local_img_path)) {
 

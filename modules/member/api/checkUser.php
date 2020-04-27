@@ -4,7 +4,10 @@ require_once($HOME_DIR . '../../_configure/dbconn.php');
 ?>
 <?php
 $result['success'] = false;
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if (isset($_POST)) {
     $type = $_POST['type'];
     $txt = $_POST['txt'];

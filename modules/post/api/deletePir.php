@@ -3,6 +3,10 @@ $HOME_DIR = str_replace(basename(__FILE__), '', realpath(__FILE__));
 require_once($HOME_DIR . '../../_configure/dbconn.php');
 ?>
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $no = $_GET["no"];
 $result['success'] = false;
 
@@ -20,8 +24,8 @@ if ($owner_email != $_SESSION['pir_user_email']) {
     $rs_img_data = mysqli_fetch_array(mysqli_query($dbconn, "SELECT * FROM `pir_imgs` WHERE img_id='$no'"));
 
     $path = '/usr/share/nginx/html/pirare/upload/';
-    $rs_img_path = $path.$rs_img_data['img_path']);
-    $rs_img_thumb_path = $path.$rs_img_data['img_thumb_path']);
+    $rs_img_path = $path.$rs_img_data['img_path'];
+    $rs_img_thumb_path = $path.$rs_img_data['img_thumb_path'];
 
     if(is_file($rs_img_path))
         unlink($rs_img_path);

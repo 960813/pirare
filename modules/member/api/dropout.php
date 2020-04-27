@@ -6,7 +6,10 @@ require_once($HOME_DIR . '../../_configure/dbconn.php');
 $result['success'] = false;
 $user_email = $_POST['user_email'];
 $user_pw = $_POST['user_pw'];
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if (isset($_SESSION['pir_user_email']) and $_SESSION['pir_user_email'] == $user_email) {
     $pir_user_email = $_SESSION['pir_user_email'];
     $pir_user_no = mysqli_fetch_array(mysqli_query($dbconn, "SELECT * FROM `pir_members` WHERE `member_email` = '$pir_user_email';"))['member_no'];

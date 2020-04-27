@@ -6,7 +6,10 @@ require_once($HOME_DIR . '../../_configure/dbconn.php');
 $sorttxt = $_POST['sort'];
 
 $result['success'] = false;
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if (isset($_SESSION['pir_user_email'])) {
     $email = $_SESSION['pir_user_email'];
     $pir_user_no = mysqli_fetch_array(mysqli_query($dbconn, "SELECT * FROM `pir_members` WHERE `member_email` = '$email';"))['member_no'];

@@ -3,6 +3,10 @@ $HOME_DIR = str_replace(basename(__FILE__), '', realpath(__FILE__));
 require_once($HOME_DIR . '../../_configure/dbconn.php');
 ?>
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $id = $_POST['id'];
 $msg = addslashes($_POST['msg']);
 $tag = array_unique(array_values(array_filter(array_map('trim', explode(',', $_POST['tag'])))));

@@ -3,13 +3,17 @@ $HOME_DIR = str_replace(basename(__FILE__), '', realpath(__FILE__));
 require_once($HOME_DIR . '../../_configure/dbconn.php');
 ?>
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $no = $_GET["no"];
 $result["data"] = array();
 
 $sortType = 'img_id desc';
 if(isset($_SESSION['pir_user_email'])) {
     $pir_user_email = $_SESSION['pir_user_email'];
-    $member_sort = mysqli_fetch_array(mysqli_query($dbconn, "SELECT * FROM `pir_members` WHERE member_email='$pir_user_email'"))['member_sort'];
+    $member_sort = mysqli_fetch_array(mysqli_query($dbconn, "SELECT * FROM `pir_members` WHERE `member_email`='$pir_user_email'"))['member_sort'];
     switch($member_sort){
         case 'desc':
             $sortType = 'img_id desc';
@@ -23,7 +27,7 @@ if(isset($_SESSION['pir_user_email'])) {
     }
 }
 
-$sql = "SELECT * FROM `pir_imgs` order by ".$sortType." LIMIT " . $no . ", 20";
+$sql = "SELECT * FROM `pir_imgs` order by ".$sortType." LIMIT " . $no . ", 50";
 
 $rs = mysqli_query($dbconn, $sql);
 while ($row = mysqli_fetch_array($rs)) {

@@ -42,7 +42,10 @@
     </div>
 
     <?php
-    session_start();
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     if (isset($_SESSION['pir_user_email'])) {
         echo '<div class="addPirButton">';
         echo '<div style="width:32px;height:32px;margin:13px;">';

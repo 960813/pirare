@@ -7,18 +7,39 @@ header('Content-type: application/json;');
 <?php
 //exit;
 $response_array['title'] = 'Inspirare JSON Response[singup.php]';
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if (isset($_POST["user_email"]) && isset($_POST["user_pw"]) && isset($_POST["user_nick"])) {
     $user_email = $_POST["user_email"];
     $user_pw = password_hash($_POST["user_pw"], PASSWORD_DEFAULT, ["cost" => 12]);
     $user_nick = $_POST["user_nick"];
 
-    $captcha = $_POST['g-recaptcha-response'];
-    $secretKey = $recaptcha_secretKey;
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha . "&remoteip=" . $ip);
-    $responseKeys = json_decode($response, true);
+    $data =
+        'secret=' .$recaptcha_secretKey.
+        '&response='. $_POST['g-recaptcha-response'].
+        '&remoteip='. $_SERVER['REMOTE_ADDR'];
 
+
+    $url = "https://www.google.com/recaptcha/api/siteverify";
+
+    $ch = curl_init();                                               //curl 초기화
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-type: application/x-www-form-urlencoded',
+        'Content-length: '. strlen($data)
+    ));
+    curl_setopt($ch, CURLOPT_URL, $url);                      //URL 지정하기
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    //요청 결과를 문자열로 반환
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);      //connection timeout 10초
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);   //원격 서버의 인증서가 유효한지 검사 안함
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);              //POST data
+    curl_setopt($ch, CURLOPT_POST, true);              //true시 post 전송
+
+    $response = curl_exec($ch);
+    $responseKeys = json_decode($response, true);
+    $response_array['sadfasdf'] = $response;
+    curl_close($ch);
     if ($responseKeys["success"]) {
 
         $sql = "INSERT INTO `pir_members` (

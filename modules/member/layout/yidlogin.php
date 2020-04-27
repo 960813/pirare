@@ -9,10 +9,10 @@
     <link rel="icon" href="//pirare.jupiterflow.com/vendor/favicon.ico">
     <title>PIRARE</title>
 
-    <script src='https://www.google.com/recaptcha/api.js?render=6LeEmMQUAAAAALMw-9BcOGt7oLk46XaYYl832Brq'></script>
+    <script src='https://www.google.com/recaptcha/api.js?render=6LcKue4UAAAAAC4swqcz6p5c4MLKDfMZLCSCBfoE'></script>
     <script type="text/javascript">
         grecaptcha.ready(function () {
-            grecaptcha.execute('6LeEmMQUAAAAALMw-9BcOGt7oLk46XaYYl832Brq', {action: 'loginpage'})
+            grecaptcha.execute('6LcKue4UAAAAAC4swqcz6p5c4MLKDfMZLCSCBfoE', {action: 'loginpage'})
                 .then(function (token) {
                     const recapElem = $(".g-recaptcha-response");
                     $.each(recapElem, function(idx,vo){

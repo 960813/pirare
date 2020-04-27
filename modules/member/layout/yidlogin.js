@@ -73,6 +73,7 @@ function checkvalue(target, event) {
                     }, "slow");
                     renewVerifyValue();
                 } else {
+                    console.log(data);
                     switch (data['error']['code']) {
                         case 1062:
                             alert("이미 가입된 이메일입니다.");
@@ -106,6 +107,7 @@ function checkvalue(target, event) {
             dataType: 'json',
             data: post_data,
             success: function (data) {
+                console.log(data);
                 switch(data.status){
                     case true:
                         $("form").each(function () {
@@ -123,7 +125,7 @@ function checkvalue(target, event) {
 
 }
 function renewVerifyValue(){
-    grecaptcha.execute('6LeEmMQUAAAAALMw-9BcOGt7oLk46XaYYl832Brq', {action: 'loginpage'})
+    grecaptcha.execute('6LcKue4UAAAAAC4swqcz6p5c4MLKDfMZLCSCBfoE', {action: 'loginpage'})
         .then(function (token) {
             const recapElem = $(".g-recaptcha-response");
             $.each(recapElem, function(idx,vo){

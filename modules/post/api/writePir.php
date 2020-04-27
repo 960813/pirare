@@ -57,7 +57,11 @@ function createThumbnailImage($org_image, $upload_ext, $upload_path)
 
 ?>
 <?php
-$path = '/usr/share/nginx/html/pirare/upload/';
+if(!isset($_SESSION))
+{
+    session_start();
+}
+$path = '/home/jupiterflow/html/pirare/upload/';
 $valid_formats = array("jpg", "png", "gif", "bmp", "jpeg");
 $data['success'] = false;
 

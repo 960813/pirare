@@ -3,7 +3,10 @@ $HOME_DIR = str_replace(basename(__FILE__), '', realpath(__FILE__));
 require_once($HOME_DIR.'../../_configure/dbconn.php');
 ?>
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $sql = "SELECT * FROM `pir_bundles`;";
 
 $rs  = mysqli_query($dbconn, $sql);

@@ -5,7 +5,10 @@ require_once($HOME_DIR . '../../_configure/dbconn.php');
 <?php
 $result['success'] = false;
 $result['data'] = array();
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if (isset($_SESSION['pir_user_email'])) {
 //    $rs = mysqli_query($dbconn, "SELECT * FROM `pir_members` LIMIT ".$no.", 10");
     $rs = mysqli_query($dbconn, "SELECT * FROM `pir_members`");

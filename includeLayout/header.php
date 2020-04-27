@@ -1,7 +1,11 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $exp = 60 * 60 * 24;// 1 day
-if (isset($_COOKIE['recentSearch']) && $_COOKIE['recentSearch'] - time() < $exp * 30) {
+//if (isset($_COOKIE['recentSearch']) && $_COOKIE['recentSearch'] - time() < $exp * 30) {
+if (isset($_COOKIE['recentSearch'])) {
     setcookie("recentSearch", "", time() - 3600, '/'); //만료시간을 3600초 전으로 셋팅하여 확실히 제거
     setcookie('recentSearch', $_COOKIE['recentSearch'], time() + $exp * 365, '/');
 }
@@ -124,10 +128,12 @@ if (isset($_GET['type']) && isset($_GET['query'])) {
                     <span>최근 검색어(<a href="#">모두 삭제</a>)</span>
                     <div class="searchHistorySection">
                         <?php
-                        $recentKeywords = array_values(array_filter(array_map('trim', explode(',', $_COOKIE['recentSearch']))));
+                        if(isset($_COOKIE['recentSearch'])) {
+                            $recentKeywords = array_values(array_filter(array_map('trim', explode(',', $_COOKIE['recentSearch']))));
 
-                        for ($i = 0; $i < count($recentKeywords); $i++) {
-                            echo "<span>" . $recentKeywords[$i] . "</span>";
+                            for ($i = 0; $i < count($recentKeywords); $i++) {
+                                echo "<span>" . $recentKeywords[$i] . "</span>";
+                            }
                         }
                         ?>
                     </div>

@@ -1,7 +1,7 @@
 let $grid;
 let fetchFlag = false;
 let uploadFlag = false;
-let searchType = 'fetch;'
+let searchType = 'fetch;';
 let searchQuery = '';
 // 소스 내용 자체는 참 쉽다.
 
