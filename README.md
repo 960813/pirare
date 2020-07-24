@@ -37,7 +37,7 @@
 * [About the Project](#about)
   * [Built With](#built-With)
 * [스스로 가장 잘 했다고 생각하는 부분](#스스로-가장-잘-했다고-생각하는-부분)
-  * [프론트엔드(FrontEnd)와 백엔드(BackEnd)의 분리](#FrontEnd와-BackEnd의-분리)
+  * [FrontEnd와 BackEnd의 분리](#frontend와-backend의-분리)
   * [Masonry 스타일 레이아웃 적용](#masonry-스타일-레이아웃-적용)
 * [프로젝트 수행 후 스스로의 평가와 성과](#프로젝트-수행-후-스스로의-평가와-성과)
 * [Contributing](#contributing)
