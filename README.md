@@ -70,6 +70,7 @@ PHP를 이용해 Pinterest 서비스를 클론한 웹 개발 프로젝트입니�
 * HTML5
 * JQuery
 * PHP
+* MariaDB
 
 ## 스스로 가장 잘 했다고 생각하는 부분
 ### FrontEnd와 BackEnd의 분리
@@ -139,7 +140,6 @@ Project Link: [https://github.com/960813/pirare](https://github.com/960813/pirar
 <!-- Acknowledgements -->
 ## Acknowledgements
 * ajax
-* MariaDB
 
 
 
