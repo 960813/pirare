@@ -35,6 +35,7 @@
 ## Table of Contents
 
 * [About the Project](#about)
+  * [Main Features](#main-features)
   * [Built With](#built-With)
 * [스스로 가장 잘 했다고 생각하는 부분](#스스로-가장-잘-했다고-생각하는-부분)
   * [FrontEnd와 BackEnd의 분리](#frontend와-backend의-분리)
@@ -57,7 +58,14 @@
 
 PHP를 이용해 Pinterest 서비스를 클론한 웹 개발 프로젝트입니다.
 
-<!-- CONTRIBUTING -->
+### Main Features
+* 게시글 목록 조회·작성·조회·수정·삭제·다운로드·검색
+* 쪽지 목록 조회·조회·작성·답장·삭제
+* 회원 가입·로그인·로그아웃·수정·탈퇴
+* 댓글 작성·조회·수정·삭제
+* 문의
+* 번들(카테고리 개념) 목록조회·소속 이미지 조회
+
 ### Built With
 * HTML5
 * JQuery
