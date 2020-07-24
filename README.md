@@ -49,14 +49,13 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About
-[![Pirare Screen Shot](https://github.com/960813/pirare/blob/master/_data/000.png?raw=true)](https://jupiterflow.com/project/3)
 [![Pirare Screen Shot](https://github.com/960813/pirare/blob/master/_data/001.png?raw=true)](https://jupiterflow.com/project/3)
 [![Pirare Screen Shot](https://github.com/960813/pirare/blob/master/_data/002.png?raw=true)](https://jupiterflow.com/project/3)
 [![Pirare Screen Shot](https://github.com/960813/pirare/blob/master/_data/003.png?raw=true)](https://jupiterflow.com/project/3)
 [![Pirare Screen Shot](https://github.com/960813/pirare/blob/master/_data/004.png?raw=true)](https://jupiterflow.com/project/3)
 [![Pirare Screen Shot](https://github.com/960813/pirare/blob/master/_data/005.png?raw=true)](https://jupiterflow.com/project/3)
 
-PHP를 이용해 핀터레스트 서비스를 클론한 웹 개발 프로젝트입니다.
+PHP를 이용해 Pinterest 서비스를 클론한 웹 개발 프로젝트입니다.
 
 <!-- CONTRIBUTING -->
 ### Built With
